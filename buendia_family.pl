@@ -1,0 +1,156 @@
+:- encoding(utf8).
+
+% All male
+male('Nicanor Ulloa').
+male('José Arcadio Buendía').
+male('José Arcadio').
+male('Aureliano Buendía').
+male('Arcadio').
+male('Aureliano José').
+male('Aureliano Uno').
+male('Aureliano Dos').
+male('Aureliano Tres').
+male('Aureliano Cuatro').
+male('Aureliano Cinco').
+male('Aureliano Seis').
+male('Aureliano Siete').
+male('Aureliano Ocho').
+male('Aureliano Nueve').
+male('Aureliano Diez').
+male('Aureliano Once').
+male('Aureliano Doce').
+male('Aureliano Trece').
+male('Aureliano Catorce').
+male('Aureliano Quince').
+male('Aureliano Dieciseis').
+male('Aureliano Diecisiete').
+male('Fernando del Carpio').
+male('José Arcadio Segundo').
+male('Aureliano Segundo').
+male('José Arcadio Dos').
+male('Aureliano Babilonia').
+male('Mauricio Babilionia').
+male('Aureliano').
+
+% All female
+female('Rebeca Montiel').
+female('Ursula Iguarán').
+female('Rebeca').
+female('Pilar Ternera').
+female('Remedios Moscote').
+female('Desconocida Uno').
+female('Desconocida Dos').
+female('Desconocida Tres').
+female('Desconocida Cuatro').
+female('Desconocida Cinco').
+female('Desconocida Seis').
+female('Desconocida Siete').
+female('Desconocida Ocho').
+female('Desconocida Nueve').
+female('Desconocida Diez').
+female('Desconocida Once').
+female('Desconocida Doce').
+female('Desconocida Trece').
+female('Desconocida Catorce').
+female('Desconocida Quince').
+female('Desconocida Dieciseis').
+female('Desconocida Diecisiete').
+female('Amaranta').
+female('Santa Sofía de la Piedad').
+female('Renata Argote').
+female('Remedios').
+female('Petra Cortés').
+female('Fernanda del Carpio').
+female('Amaranta Úrsula').
+female('Renata Remedios').
+
+% PARENT
+%First Generation
+parent('Nicanor Ulloa', 'Rebeca').
+parent('Rebeca Montiel', 'Rebeca').
+
+parent('José Arcadio Buendía', 'Aureliano Buendía').
+parent('Ursula Iguarán', 'Aureliano Buendía').
+
+parent('José Arcadio Buendía', 'José Arcadio').
+parent('Ursula Iguarán', 'José Arcadio').
+
+parent('José Arcadio Buendía', 'Amaranta').
+parent('Ursula Iguarán', 'Amaranta').
+
+
+%Second generation
+parent('José Arcadio', 'Arcadio').
+parent('Pilar Ternera', 'Arcadio').
+
+parent('Aureliano Buendía', 'Aureliano José').
+parent('Pilar Ternera', 'Aureliano José').
+
+parent('Aureliano Buendía', 'Aureliano Uno').
+parent('Aureliano Buendía', 'Aureliano Dos').
+parent('Aureliano Buendía', 'Aureliano Tres').
+parent('Aureliano Buendía', 'Aureliano Cuatro').
+parent('Aureliano Buendía', 'Aureliano Cinco').
+parent('Aureliano Buendía', 'Aureliano Seis').
+parent('Aureliano Buendía', 'Aureliano Siete').
+parent('Aureliano Buendía', 'Aureliano Ocho').
+parent('Aureliano Buendía', 'Aureliano Nueve').
+parent('Aureliano Buendía', 'Aureliano Diez').
+parent('Aureliano Buendía', 'Aureliano Once').
+parent('Aureliano Buendía', 'Aureliano Doce').
+parent('Aureliano Buendía', 'Aureliano Trece').
+parent('Aureliano Buendía', 'Aureliano Catorce').
+parent('Aureliano Buendía', 'Aureliano Quince').
+parent('Aureliano Buendía', 'Aureliano Dieciseis').
+parent('Aureliano Buendía', 'Aureliano Diecisiete').
+
+parent('Desconocida Uno', 'Aureliano Uno').
+parent('Desconocida Dos', 'Aureliano Dos').
+parent('Desconocida Tres', 'Aureliano Tres').
+parent('Desconocida Cuatro', 'Aureliano Cuatro').
+parent('Desconocida Cinco', 'Aureliano Cinco').
+parent('Desconocida Seis', 'Aureliano Seis').
+parent('Desconocida Siete', 'Aureliano Siete').
+parent('Desconocida Ocho', 'Aureliano Ocho').
+parent('Desconocida Nueve', 'Aureliano Nueve').
+parent('Desconocida Diez', 'Aureliano Diez').
+parent('Desconocida Once', 'Aureliano Once').
+parent('Desconocida Doce', 'Aureliano Doce').
+parent('Desconocida Trece', 'Aureliano Trece').
+parent('Desconocida Catorce', 'Aureliano Catorce').
+parent('Desconocida Quince', 'Aureliano Quince').
+parent('Desconocida Dieciseis', 'Aureliano Dieciseis').
+parent('Desconocida Diecisiete', 'Aureliano Diecisiete').
+
+%Third Generation
+parent('Arcadio', 'Remedios').
+parent('Santa Sofía de la Piedad', 'Remedios').
+
+parent('Arcadio', 'José Arcadio Segundo').
+parent('Santa Sofía de la Piedad', 'José Arcadio Segundo').
+
+parent('Arcadio', 'Aureliano Segundo').
+parent('Santa Sofía de la Piedad', 'Aureliano Segundo').
+
+parent('Fernando del Carpio', 'Fernanda del Carpio').
+parent('Renata Argote', 'Fernanda del Carpio').
+
+%Fourth Generation
+parent('Aureliano Segundo', 'Amaranta Úrsula').
+parent('Fernanda del Carpio', 'Amaranta Úrsula').
+
+parent('Aureliano Segundo', 'José Arcadio Dos').
+parent('Fernanda del Carpio', 'José Arcadio Dos').
+
+parent('Aureliano Segundo', 'Renata Remedios').
+parent('Fernanda del Carpio', 'Renata Remedios').
+
+%Fifth generation
+parent('Renata Remedios', 'Aureliano Babilonia').
+parent('Mauricio Babilionia', 'Aureliano Babilonia').
+
+%Sixth generation
+parent('Aureliano Babilonia', 'Aureliano').
+parent('Amaranta Úrsula', 'Aureliano').
+
+cls :- write('\33\[2J').
