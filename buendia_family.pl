@@ -1,5 +1,3 @@
-:- encoding(utf8).
-
 % All male
 male('Nicanor Ulloa').
 male('José Arcadio Buendía').
@@ -31,6 +29,7 @@ male('José Arcadio Dos').
 male('Aureliano Babilonia').
 male('Mauricio Babilionia').
 male('Aureliano').
+male('Gastón').
 
 % All female
 female('Rebeca Montiel').
@@ -153,4 +152,62 @@ parent('Mauricio Babilionia', 'Aureliano Babilonia').
 parent('Aureliano Babilonia', 'Aureliano').
 parent('Amaranta Úrsula', 'Aureliano').
 
-cls :- write('\33\[2J').
+grandparent(X,Y):-	parent(X,Z), 
+    				parent(Z,Y).
+
+grandfather(X,Y):-	grandparent(X,Y), 
+    				male(X).
+
+grandmother(X,Y):-	grandparent(X,Y), 
+    				female(X).
+
+
+no_children(X):-	(male(X); female(X)),
+    				\+ parent(X,_).
+
+
+is_mother(X):- parent(X,_), female(X).
+is_father:-	parent(X,_), male(X).
+
+married(X,Y):-	parent(X,Z), parent(Y,Z).
+married(X,Y):-	parent(Y,Z), parent(X,Z).
+married('José Arcadio', 'Rebeca').
+married('Amaranta Ursula', 'Gastón').
+
+
+
+ancestor(X,Y):-	parent(X,Y).
+
+ancestor(X,Y):- parent(X,Z),
+    			ancestor(Z,Y).
+
+dif(X,Y):-	X \= Y.
+
+sibling(X, Y) :-
+    parent(P, X),
+    parent(P, Y),
+    dif(X,Y).
+
+uncle(X,Y):-	parent(Z,Y), 
+    			sibling(X,Z), 
+    			male(X).
+
+uncle(X,Y):-	parent(Z,Y), 
+                married(X,S), 
+                sibling(S,Z),
+                male(X).
+
+aunt(X,Y):-	parent(Z,Y), 
+    		sibling(X,Z), 
+    		female(X).
+
+aunt(X,Y):-	parent(Z,Y), 
+    		married(S,X),  
+    		sibling(S,Z),
+    		female(X).
+
+list_aunt(X, Aunts):-setof(Y, aunt(Y, X), Aunts).
+
+sentence:-write('"... y que todo lo escrito en ellos era irrepetible desde siempre y para
+siempre porque las estirpes condenadas a cien años de soledad no tenían una segunda
+oportunidad sobre la tierra."').
