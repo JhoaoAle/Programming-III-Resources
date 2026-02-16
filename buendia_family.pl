@@ -27,7 +27,7 @@ male('José Arcadio Segundo').
 male('Aureliano Segundo').
 male('José Arcadio Dos').
 male('Aureliano Babilonia').
-male('Mauricio Babilionia').
+male('Mauricio Babilonia').
 male('Aureliano').
 male('Gastón').
 
@@ -146,7 +146,7 @@ parent('Fernanda del Carpio', 'Renata Remedios').
 
 %Fifth generation
 parent('Renata Remedios', 'Aureliano Babilonia').
-parent('Mauricio Babilionia', 'Aureliano Babilonia').
+parent('Mauricio Babilonia', 'Aureliano Babilonia').
 
 %Sixth generation
 parent('Aureliano Babilonia', 'Aureliano').
@@ -167,46 +167,110 @@ no_children(X):-	(male(X); female(X)),
 
 
 is_mother(X):- parent(X,_), female(X).
-is_father:-	parent(X,_), male(X).
+is_father(X):-	parent(X,_), male(X).
 
-married(X,Y):-	parent(X,Z), parent(Y,Z).
-married(X,Y):-	parent(Y,Z), parent(X,Z).
-married('José Arcadio', 'Rebeca').
-married('Amaranta Ursula', 'Gastón').
+dif(X,Y):-	X \= Y.
 
 
+married_fact('José Arcadio', 'Rebeca').
+married_fact('Amaranta Úrsula', 'Gastón').
+married_fact('Aureliano Buendía', 'Remedios Moscote').
+
+/*
+married(X,Y) :-
+    married_fact(X,Y).
+
+married(X,Y) :-
+    married_fact(Y,X).
+
+married(X,Y):-	parent(X,Z), 
+    			parent(Y,Z), 
+    			dif(X,Y).
+*/
+/*
+married(X,Y):-	dif(X,Y),
+    			(   
+                	married_fact(X,Y);
+                	married_fact(Y,X);
+                (parent(X,Z), parent(Y,Z))
+                ).
+    
+*/
+married(X,Y):-	(   
+                married_fact(X,Y);
+                married_fact(Y,X);
+                (parent(X,Z), parent(Y,Z))
+                ),
+    			dif(X,Y).
 
 ancestor(X,Y):-	parent(X,Y).
 
 ancestor(X,Y):- parent(X,Z),
     			ancestor(Z,Y).
 
-dif(X,Y):-	X \= Y.
+
 
 sibling(X, Y) :-
     parent(P, X),
     parent(P, Y),
     dif(X,Y).
 
-uncle(X,Y):-	parent(Z,Y), 
-    			sibling(X,Z), 
-    			male(X).
+uncle(X, Y) :-
+    parent(Z, Y),
+    sibling(X, Z),
+    male(X),
+    \+ parent(X,Y).
 
-uncle(X,Y):-	parent(Z,Y), 
-                married(X,S), 
-                sibling(S,Z),
-                male(X).
+uncle(X, Y) :-
+    parent(Z,Y),
+    sibling(A,Z),
+    female(A),
+    married(X,A),
+    male(X),
+    \+ parent(X,Y).
 
-aunt(X,Y):-	parent(Z,Y), 
-    		sibling(X,Z), 
-    		female(X).
+aunt(X, Y) :-
+    parent(Z, Y),
+    sibling(X, Z),
+    female(X),
+    \+ parent(X,Y).
 
-aunt(X,Y):-	parent(Z,Y), 
-    		married(S,X),  
-    		sibling(S,Z),
-    		female(X).
+
+aunt(X, Y) :-
+    parent(Z,Y),
+    sibling(A,Z),
+    male(A),
+    married(X,A),
+   	female(X),
+    \+ parent(X,Y).
+
+
+cousin(X,Y):-
+    parent(Z,Y),
+    (aunt(Z,X); uncle(Z,X)),
+    dif(X,Y).
+
+list_uncle(X, Uncles):-setof(Y, uncle(Y, X), Uncles).
 
 list_aunt(X, Aunts):-setof(Y, aunt(Y, X), Aunts).
+
+list_cousin(X, Cousins):-setof(Y, cousin(Y, X), Cousins).
+
+full_sibling(X,Y):-
+    parent(P1, X), parent(P2, X),   
+    parent(P1, Y), parent(P2, Y),   
+    dif(P1,P2),                      
+    dif(X,Y).
+
+half_sibling(X,Y):-
+    parent(P, X), parent(P, Y),     
+    dif(X,Y),
+    \+ full_sibling(X,Y).
+
+    
+
+
+
 
 sentence:-write('"... y que todo lo escrito en ellos era irrepetible desde siempre y para
 siempre porque las estirpes condenadas a cien años de soledad no tenían una segunda
