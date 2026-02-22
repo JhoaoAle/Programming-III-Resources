@@ -1,0 +1,398 @@
+<div class="notebook">
+
+<div class="nb-cell markdown" name="md2">
+## Initial Facts
+
+These initial facts correspond to the Buendía's family tree from "One Hundred Years of Solitude" by Gabriel García Marquez.
+
+Visual aid for clarity: http://commons.wikimedia.org/wiki/File:Buendia.gif
+
+Here we define all parent relationships as well as all of the male and female documented members of the Buendia family, as per the book.
+</div>
+
+<div class="nb-cell program" data-background="true" data-below="true" name="p1">
+% All male
+male('Nicanor Ulloa').
+male('José Arcadio Buendía').
+male('José Arcadio').
+male('Aureliano Buendía').
+male('Arcadio').
+male('Aureliano José').
+male('Aureliano Uno').
+male('Aureliano Dos').
+male('Aureliano Tres').
+male('Aureliano Cuatro').
+male('Aureliano Cinco').
+male('Aureliano Seis').
+male('Aureliano Siete').
+male('Aureliano Ocho').
+male('Aureliano Nueve').
+male('Aureliano Diez').
+male('Aureliano Once').
+male('Aureliano Doce').
+male('Aureliano Trece').
+male('Aureliano Catorce').
+male('Aureliano Quince').
+male('Aureliano Dieciseis').
+male('Aureliano Diecisiete').
+male('Fernando del Carpio').
+male('José Arcadio Segundo').
+male('Aureliano Segundo').
+male('José Arcadio Dos').
+male('Aureliano Babilonia').
+male('Mauricio Babilonia').
+male('Aureliano').
+male('Gastón').
+
+% All female
+female('Rebeca Montiel').
+female('Ursula Iguarán').
+female('Rebeca').
+female('Pilar Ternera').
+female('Remedios Moscote').
+female('Desconocida Uno').
+female('Desconocida Dos').
+female('Desconocida Tres').
+female('Desconocida Cuatro').
+female('Desconocida Cinco').
+female('Desconocida Seis').
+female('Desconocida Siete').
+female('Desconocida Ocho').
+female('Desconocida Nueve').
+female('Desconocida Diez').
+female('Desconocida Once').
+female('Desconocida Doce').
+female('Desconocida Trece').
+female('Desconocida Catorce').
+female('Desconocida Quince').
+female('Desconocida Dieciseis').
+female('Desconocida Diecisiete').
+female('Amaranta').
+female('Santa Sofía de la Piedad').
+female('Renata Argote').
+female('Remedios').
+female('Petra Cortés').
+female('Fernanda del Carpio').
+female('Amaranta Úrsula').
+female('Renata Remedios').
+
+% PARENT
+%First Generation
+parent('Nicanor Ulloa', 'Rebeca').
+parent('Rebeca Montiel', 'Rebeca').
+
+parent('José Arcadio Buendía', 'Aureliano Buendía').
+parent('Ursula Iguarán', 'Aureliano Buendía').
+
+parent('José Arcadio Buendía', 'José Arcadio').
+parent('Ursula Iguarán', 'José Arcadio').
+
+parent('José Arcadio Buendía', 'Amaranta').
+parent('Ursula Iguarán', 'Amaranta').
+
+
+%Second generation
+parent('José Arcadio', 'Arcadio').
+parent('Pilar Ternera', 'Arcadio').
+
+parent('Aureliano Buendía', 'Aureliano José').
+parent('Pilar Ternera', 'Aureliano José').
+
+parent('Aureliano Buendía', 'Aureliano Uno').
+parent('Aureliano Buendía', 'Aureliano Dos').
+parent('Aureliano Buendía', 'Aureliano Tres').
+parent('Aureliano Buendía', 'Aureliano Cuatro').
+parent('Aureliano Buendía', 'Aureliano Cinco').
+parent('Aureliano Buendía', 'Aureliano Seis').
+parent('Aureliano Buendía', 'Aureliano Siete').
+parent('Aureliano Buendía', 'Aureliano Ocho').
+parent('Aureliano Buendía', 'Aureliano Nueve').
+parent('Aureliano Buendía', 'Aureliano Diez').
+parent('Aureliano Buendía', 'Aureliano Once').
+parent('Aureliano Buendía', 'Aureliano Doce').
+parent('Aureliano Buendía', 'Aureliano Trece').
+parent('Aureliano Buendía', 'Aureliano Catorce').
+parent('Aureliano Buendía', 'Aureliano Quince').
+parent('Aureliano Buendía', 'Aureliano Dieciseis').
+parent('Aureliano Buendía', 'Aureliano Diecisiete').
+
+parent('Desconocida Uno', 'Aureliano Uno').
+parent('Desconocida Dos', 'Aureliano Dos').
+parent('Desconocida Tres', 'Aureliano Tres').
+parent('Desconocida Cuatro', 'Aureliano Cuatro').
+parent('Desconocida Cinco', 'Aureliano Cinco').
+parent('Desconocida Seis', 'Aureliano Seis').
+parent('Desconocida Siete', 'Aureliano Siete').
+parent('Desconocida Ocho', 'Aureliano Ocho').
+parent('Desconocida Nueve', 'Aureliano Nueve').
+parent('Desconocida Diez', 'Aureliano Diez').
+parent('Desconocida Once', 'Aureliano Once').
+parent('Desconocida Doce', 'Aureliano Doce').
+parent('Desconocida Trece', 'Aureliano Trece').
+parent('Desconocida Catorce', 'Aureliano Catorce').
+parent('Desconocida Quince', 'Aureliano Quince').
+parent('Desconocida Dieciseis', 'Aureliano Dieciseis').
+parent('Desconocida Diecisiete', 'Aureliano Diecisiete').
+
+%Third Generation
+parent('Arcadio', 'Remedios').
+parent('Santa Sofía de la Piedad', 'Remedios').
+
+parent('Arcadio', 'José Arcadio Segundo').
+parent('Santa Sofía de la Piedad', 'José Arcadio Segundo').
+
+parent('Arcadio', 'Aureliano Segundo').
+parent('Santa Sofía de la Piedad', 'Aureliano Segundo').
+
+parent('Fernando del Carpio', 'Fernanda del Carpio').
+parent('Renata Argote', 'Fernanda del Carpio').
+
+%Fourth Generation
+parent('Aureliano Segundo', 'Amaranta Úrsula').
+parent('Fernanda del Carpio', 'Amaranta Úrsula').
+
+parent('Aureliano Segundo', 'José Arcadio Dos').
+parent('Fernanda del Carpio', 'José Arcadio Dos').
+
+parent('Aureliano Segundo', 'Renata Remedios').
+parent('Fernanda del Carpio', 'Renata Remedios').
+
+%Fifth generation
+parent('Renata Remedios', 'Aureliano Babilonia').
+parent('Mauricio Babilonia', 'Aureliano Babilonia').
+
+%Sixth generation
+parent('Aureliano Babilonia', 'Aureliano').
+parent('Amaranta Úrsula', 'Aureliano').
+
+dif(X,Y):-	X \= Y.
+</div>
+
+<div class="nb-cell markdown" name="md3">
+## Grandparent rules
+
+The predicates `grandparent/2`, `grandfather/2` and `grandmother/2` are defined by the following rules.
+
+In general, they can be read as follows, respectively:
+
+- "X is a grandparent of Y if X is a parent of Z and Z is a parent of Y."
+- "X is a grandfather of Y if X is a grandparent of Y and X is male."
+- "X is a grandmother of Y if X is a grandparent of Y and X is female."
+</div>
+
+<div class="nb-cell program" data-background="true" data-below="true" name="p2">
+grandparent(X,Y):-	parent(X,Z), 
+    				parent(Z,Y).
+
+grandfather(X,Y):-	grandparent(X,Y), 
+    				male(X).
+
+grandmother(X,Y):-	grandparent(X,Y), 
+    				female(X).
+</div>
+
+<div class="nb-cell markdown" name="md4">
+## Negation cases
+
+The `\+` operator is equivalent to `not`, the rule below for the `no_children/1` predicate reads as:
+
+"X has no children if X is either male or female and X isn't a parent of anyone in particular."
+</div>
+
+<div class="nb-cell program" data-background="true" data-below="true" name="p3">
+no_children(X):-	(male(X); female(X)),
+    				\+ parent(X,_).
+</div>
+
+<div class="nb-cell query" data-tabled="true" name="q1">
+no_children(X).
+</div>
+
+<div class="nb-cell markdown" name="md5">
+## Querying using anonymous variables
+
+In the rules defined below for the predicates `is_mother/1` and `is_father/1`, the `_` symbol is used.
+
+This is an **anonymous variable**, which tells prolog it won't be used later. It can be read as:
+
+"X is a mother if X is the parent of some child, no matter who”
+
+"X is a father if X is the parent of some child, no matter who”
+</div>
+
+<div class="nb-cell program" data-background="true" data-below="true" name="p4">
+is_mother(X):- parent(X,_), female(X).
+is_father(X):-	parent(X,_), male(X).
+</div>
+
+<div class="nb-cell markdown" name="md6">
+## Using added facts to define rules
+
+In this case, the logic for a couple being married is for X and Y being the parents of one same child. However this logic would not hold for childless couples in the family tree.
+
+In order to fix this, the `married_fact/2` predicate is added and then used in the rule for the `married/2` predicate. Which can be read as such:
+
+"X and Y are married if X and Y are defined as factualy being married or Y and X are defined as being factually married [Note: This is done since X and Y are not conmutative when we defined the facts] or X is parent of Z and Y is a parent of Z and X and Y are different people".
+
+Note that at least one of the three first conditions has to be met along with the fourth condition. `;` and `,` correspond to `or` and `and` respectively
+</div>
+
+<div class="nb-cell program" data-background="true" data-below="true" name="p5">
+married_fact('José Arcadio', 'Rebeca').
+married_fact('Amaranta Úrsula', 'Gastón').
+married_fact('Aureliano Buendía', 'Remedios Moscote').
+
+married(X,Y):-	(   
+                married_fact(X,Y);
+                married_fact(Y,X);
+                (parent(X,Z), parent(Y,Z))
+                ),
+    			dif(X,Y).
+</div>
+
+<div class="nb-cell markdown" name="md7">
+## Recursion
+
+**Note** there can be more than one rule for any given predicate. In this case the predicate `ancestor/2` has two rules, but it could have more. It is also improtant to note one of the `ancestor/2` rules is calling itself, which means this rule is **recursive**, it means it should be split into a base case and a recursive step, in this situation it goes as follows:
+
+Base case: "A parent is an ancestor." 
+
+Recursive step: "A parent of an ancestor is also an ancestor."
+
+**Important:** Prolog reads rules top to bottom. The base case always has to go above the recursive step.
+
+Additional resource on Prolog's recursion: https://swish.swi-prolog.org/p/ILP_Recursion.swinb
+</div>
+
+<div class="nb-cell program" data-background="true" data-below="true" name="p6">
+ancestor(X,Y):-	parent(X,Y).
+
+ancestor(X,Y):- parent(X,Z),
+    			ancestor(Z,Y).
+</div>
+
+<div class="nb-cell markdown" name="md8">
+## Building a sibling/2 predicate based on what has been taught so far
+</div>
+
+<div class="nb-cell program" data-background="true" data-below="true" name="p8">
+sibling(X, Y) :-
+    parent(P, X),
+    parent(P, Y),
+    dif(X,Y).
+</div>
+
+<div class="nb-cell markdown" name="md9">
+## Rules for uncle/2 and aunt/2 predicates
+
+There are two rules for each of the predicates, which defines both blood related and political uncles and aunts, it goes as follows:
+
+Biological uncle: "X is an uncle of Y if: Z is a parent of Y and X is a sibling of Z and X is male and X is not a parent of Y"
+
+Political uncle: "X is an uncle of Y if: Z is a parent of Y and A is a sibling of Z and A is female and X is married to A and X is male and X is not a parent of Y"
+
+Biological aunt: "X is an aunt of Y if: Z is a parent of Y and X is a sibling of Z and X is female and X is not a parent of Y"
+
+Political aunt: "X is an aunt of Y if: Z is a parent of Y and A is a sibling of Z and A is male and X is married to A and X is female and X is not a parent of Y"
+</div>
+
+<div class="nb-cell program" data-background="true" data-below="true" name="p7">
+uncle(X, Y) :-
+    parent(Z, Y),
+    sibling(X, Z),
+    male(X),
+    \+ parent(X,Y).
+
+uncle(X, Y) :-
+    parent(Z,Y),
+    sibling(A,Z),
+    female(A),
+    married(X,A),
+    male(X),
+    \+ parent(X,Y).
+
+aunt(X, Y) :-
+    parent(Z, Y),
+    sibling(X, Z),
+    female(X),
+    \+ parent(X,Y).
+
+
+aunt(X, Y) :-
+    parent(Z,Y),
+    sibling(A,Z),
+    male(A),
+    married(X,A),
+   	female(X),
+    \+ parent(X,Y).
+</div>
+
+<div class="nb-cell markdown" name="md10">
+## Building on previous rules
+
+Now that we know who is an uncle or aunt, it is easier to determine if X is a cousin of Y, in this case, X and Y are cousins when a parent of Y is either an aunt or uncle of X, and X is different of Y
+</div>
+
+<div class="nb-cell program" data-background="true" data-below="true" name="p9">
+cousin(X,Y):-
+    parent(Z,Y),
+    (aunt(Z,X); uncle(Z,X)),
+    dif(X,Y).
+</div>
+
+<div class="nb-cell markdown" name="md11">
+## setof as a way of listing unique results
+
+The predicate `setof/3` is used in Prolog to collect all solutions to a goal into a sorted list without duplicates.
+
+It means:
+
+“Find all instances of `Y` that satisfy `Y` being an uncle of `X`, remove duplicates, sort them, and return them in `Uncles`.”
+
+“Find all instances of `Y` that satisfy `Y` being an aunt of `X`, remove duplicates, sort them, and return them in `Aunts`.”
+
+“Find all instances of `Y` that satisfy `Y` being an cousin of `X`, remove duplicates, sort them, and return them in `Cousins`.”
+</div>
+
+<div class="nb-cell program" data-background="true" data-below="true" name="p11">
+list_uncle(X, Uncles):-setof(Y, uncle(Y, X), Uncles).
+
+list_aunt(X, Aunts):-setof(Y, aunt(Y, X), Aunts).
+
+list_cousin(X, Cousins):-setof(Y, cousin(Y, X), Cousins).
+</div>
+
+<div class="nb-cell query" name="q2">
+list_uncle('Aureliano Cuatro', Unc)
+</div>
+
+<div class="nb-cell query" name="q3">
+list_aunt('Aureliano', Aunts)
+</div>
+
+<div class="nb-cell markdown" name="md12">
+## Challenge
+
+Explain why the following rules for the predicate `half_sibling/2` work or why they don't, using your own words. In case it doesn't work, how would it ahve to be fixed in order for it to work?
+</div>
+
+<div class="nb-cell program" data-background="true" data-below="true" name="p10">
+full_sibling(X,Y):-
+    parent(P1, X), parent(P2, X),   
+    parent(P1, Y), parent(P2, Y),   
+    dif(P1,P2),                      
+    dif(X,Y).
+
+half_sibling(X,Y):-
+    parent(P, X), parent(P, Y),     
+    dif(X,Y),
+    \+ full_sibling(X,Y).
+</div>
+
+<div class="nb-cell markdown" name="md1">
+"... y que todo lo escrito en ellos era irrepetible desde siempre y para
+siempre porque las estirpes condenadas a cien años de soledad no tenían una segunda
+oportunidad sobre la tierra."
+</div>
+
+</div>
