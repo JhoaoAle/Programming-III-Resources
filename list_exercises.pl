@@ -6,7 +6,11 @@ print_list([H|T]):-write(H),write(' '),print_list(T).
 addtoend(H,[],[H]).
 addtoend(X,[H|T],[H|T1]):-addtoend(X,T,T1).
 reversex([],[]).
-reversex([H|T],Y):- reversex(T,T1), addtoend(H,T1,Y).
+reversex([H|T],Y):-
+    write('Reversing: '), write([H|T]), nl,
+    reversex(T,T1),
+    write('Adding '), write(H), write(' to '), write(T1), nl,
+    addtoend(H,T1,Y).
 
 %3. create list ?-create_list(5,12,S). S=[5,6,7,8,9,10,11,12]
 create_list(X,X,[X]).
