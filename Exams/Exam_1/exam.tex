@@ -1,0 +1,57 @@
+\documentclass[twocolumn]{article}
+
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{microtype}
+\usepackage[top=1.5cm]{geometry} % controls page margins
+
+\title{Examen Pre-Parcial 1}
+\author{Programación III \\ Facultad de Ingenierías - Universidad Tecnológica de Pereira \\ Ingeniería de Sistemas y Computación}
+\date{Marzo 12 2026}
+
+\begin{document}
+\maketitle
+
+\textbf{1. (1.5)} Definir un predicado \texttt{product_digits(A, P)} que calcule el producto de los dígitos de un número entero positivo
+
+\begin{verbatim}
+Procedimiento BubbleSort(arr, n)
+    Repetir
+        swapped ← falso
+        Para i desde 0 hasta n - 2 hacer
+           Si arr[i] < arr[i+1] entonces
+                temp ← arr[i]
+                arr[i] ← arr[i+1]
+                arr[i+1] ← temp
+                swapped ← verdadero
+            FinSi
+        FinPara
+    Hasta que swapped = falso
+FinProcedimiento
+\end{verbatim}
+
+\textbf{a.} Evaluar si el código presentado funciona correctamente tal como fue presentado o si es necesario realizar alguna corrección a la función. En caso de que sea necesario realizar alguna modificación, presente la versión corregida de la función.
+
+\textbf{b.} Analizar la complejidad de esta implementación para el caso promedio en notación O. \\
+
+\textbf{2. (1.5)} En las siguientes situaciones se debe identificar la estructura que mejor soluciona el problema (array, cola, pila, lista enlazada, lista doblemente enlazada) y justificar la elección. 
+
+
+\textbf{a.} Se desea guardar todas las palabras de un libro para iterar sobre ellas.
+
+\textbf{b.} Simular el orden de atención de la oficina de pasaportes, donde se asignan horas de cita en fragmentos de 15 minutos (08:00, 08:15, 08:30… ). Si una o más personas tienen una misma hora de cita asignada, estas son atendidas en orden de llegada.
+
+\textbf{c.} Cada vez que un usuario visita una nueva página, esta se almacena en el historial. El usuario puede navegar hacia atrás y adelante entre las páginas visitadas recientemente. \\
+
+\textbf{3. (2.5)} Implementar un código el cual, dada una cadena de caracteres (string), determine si se trata de un palíndromo (es decir, una palabra que se lee igual en un sentido que en el otro). La implementación de este código debe realizarse en lenguaje C, C++, o pseudocódigo. Debe incluir una prueba de escritorio a partir de la solución propuesta para uno de los siguientes casos:
+
+- "anna"
+
+- "reconocer"
+
+- "test"
+
+Para los dos primeros casos, debe retornar 'true' y para el tercer caso debe retornar 'false'.
+\end{document}
