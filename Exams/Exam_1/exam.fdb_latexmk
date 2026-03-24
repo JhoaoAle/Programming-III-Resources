@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1773340154.70842 "/home/jhoao/Projects/Programming-III-Resources/Exams/Exam_1/exam.tex" "exam.pdf" "exam" 1773340154.9763 0
+["pdflatex"] 1773786647.42502 "/home/jhoao/Projects/Programming-III-Resources/Exams/Exam_1/exam.tex" "exam.pdf" "exam" 1773786647.83677 0
   "/home/jhoao/.texlive/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk" 1766168490.62805 11524 fd4896da0e01d71f274f6a275fb6f6cb ""
-  "/home/jhoao/Projects/Programming-III-Resources/Exams/Exam_1/exam.tex" 1773340154.56462 2380 87694890d3371d3e3ffe2e1a9368ee61 ""
+  "/home/jhoao/Projects/Programming-III-Resources/Exams/Exam_1/exam.tex" 1773786647.2259 2318 e186b831475552da5daa8e303a813575 ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1767555874 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1767555874 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1767555874 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -119,8 +119,8 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1767555874 42087 b0f9697c952c8f5a8eede4134282cb0d ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1772218435 5011229 9e2a3c024ce745caba5794ee5595b35e ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1772218427 2008241 07494ca5d988bb2fea04661eda9b1277 ""
-  "exam.aux" 1773340154.9479 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
-  "exam.tex" 1773340154.56462 2380 87694890d3371d3e3ffe2e1a9368ee61 ""
+  "exam.aux" 1773786647.64597 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "exam.tex" 1773786647.2259 2318 e186b831475552da5daa8e303a813575 ""
   (generated)
   "exam.aux"
   "exam.log"

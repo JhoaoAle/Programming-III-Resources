@@ -16,7 +16,7 @@
 \maketitle
 \thispagestyle{empty}
 
-\textbf{1. (1.5)} Definir el predicado \texttt{product\_digits/2} donde \texttt{product\_digits(N, P)} es verdadero si \texttt{P} es el producto de los dígitos de \texttt{N}. \newline \newline
+\textbf{1. (1.5)} Definir el predicado \texttt{count\_digits/2} donde \texttt{count\_digits(N, P)} es verdadero si \texttt{P} es la cantidad de dígitos de \texttt{N}. \newline \newline
 
 \textbf{2. (1.0)} Considere el siguiente árbol genealógico:
 
@@ -28,42 +28,43 @@
 ]
 
 \node {Juan}
-    child { node {Pedro}
-        child { node {Carlos} }
-        child { node {Laura} }
+    child { node {Clara}
+        child { node {Lucia} }
     }
-    child { node {Ana} };
+    child { node {Diego}
+        child { node {Mario} }
+        child { node {Julia} }
+    };
 
 \end{tikzpicture}
 \end{center}
 
 \textbf{a. } Escribir la base de conocimiento en prolog utilizando hechos para representar las relaciones de parentezco.
 
-\textbf{b. } Definir un predicado \texttt{abuelo/2} donde \texttt{abuelo(X, Y).} es verdadero si \texttt{X} es el abuelo de \texttt{Y}. \newline \newline
+\textbf{b. } Definir un predicado \texttt{nieto/2} donde \texttt{nieto(X, Y).} es verdadero si \texttt{X} es el nieto de \texttt{Y}. \newline \newline
 
 
-\textbf{3. (2.5)} Escribir un predicado \texttt{fizzbuzz/2} que genere la secuencia FizzBuzz desde 1 hasta un número entero positivo \texttt{N}, donde \texttt{fizzbuzz(N, Resultado).} es verdadero si
+\textbf{3. (2.5)} Escribir un predicado \texttt{par\_impar/2} que genere una secuencia desde 1 hasta un número entero positivo \texttt{N}, donde \texttt{par\_impar(N, Resultado).} es verdadero si
 \texttt{Resultado} es una lista de longitud \texttt{N} que contiene el valor correspondiente para cada número \texttt{i} desde \texttt{1} hasta \texttt{N}. \newline
 
 Para cada posición \texttt{i} en la lista: 
 
 \begin{itemize}
-  \item Si \texttt{i} es divisible por \texttt{3} y \texttt{5}, el elemento debe ser \texttt{"FizzBuzz"}.
-  \item Si \texttt{i} es divisible solo por \texttt{3}, el elemento debe ser \texttt{"Fizz"}.
-  \item Si \texttt{i} es divisible solo por \texttt{5}, el elemento debe ser \texttt{"Buzz"}.
+  \item Si \texttt{i} es múltiplo de \texttt{2} y \texttt{3}, el elemento debe ser \texttt{"Especial"}.
+  \item Si \texttt{i} es par, el elemento debe ser \texttt{"Par"}.
+  \item Si \texttt{i} es impar, el elemento debe ser \texttt{"Impar"}.
 \end{itemize}
 
-En cualquier otro caso, el elemento debe ser el número \texttt{i}. \newline
 
 Ejemplo de consulta:
 \begin{verbatim}
-    ?- fizzbuzz(15, R).
+    ?- par_impar(15, R).
 \end{verbatim}
 
 Resultado esperado:
 \begin{verbatim}
-    R = [1, 2, "Fizz", 4, "Buzz", "Fizz", 7, 8, "Fizz", "Buzz",
-     11, "Fizz", 13, 14, "FizzBuzz"].
+    R = ["Impar", "Par", "Impar", "Par", "Impar", "Especial", "Impar", "Par", "Impar", "Par", 
+    "Impar", "Especial", "Impar", "Par", "Impar"].
 \end{verbatim}
 
 
