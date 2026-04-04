@@ -1,0 +1,67 @@
+num_subjects = 60;
+num_semestre = 10;
+num_precedences = 49;
+num_simultaneo = 4;
+num_electivas1 = 2;
+num_electivas2 = 2;
+
+subjects = [
+"Deportes1","Desarrollo_del_pensamiento_logico","Matemáticas1",
+"Introducción_a_la_informatica","Programacion1","Humanidades1",
+"Deportes2","Laboratorio_fisica1","Fisica1","Matematicas2",
+"Algebra_lineal","Programacion2","Laboratorio_fisica2","Fisica2",
+"Matematicas3","Lógica","Estructura_de_datos","Humanidades2",
+"Laboratorio_de_electronica","Fundamentos_de_electronica",
+"Fisica3","Laboratorio_fisica3","Matematicas4","Programacion3",
+"Teoría_de_sistemas","Laboratorio_electronica_digital",
+"electronica_digital","administración_de_empresas","estadística",
+"programacion4","gramática_y_lenguajes_formales",
+"técnicas_de_la_comunicacion","arquitectura_de_computadores",
+"investigación_de_operaciones","computación_grafica",
+"estadísticas_especiales","bases_de_datos1",
+"sistemas_operativos1","comunicaciones1",
+"inteligencia_artificial","ingeniería_de_software1",
+"compiladores","comunicaciones2","computación_blanda",
+"gerencia_de_proyecto","legislación_y_etica",
+"sistemas_distribuidos","ingeniería_de_software2",
+"arquitectura_clienteservidor",
+"administración_proyectos_de_software",
+"laboratorio_software","proyecto_de_grado1",
+"constitucion_politica","auditoria_de_sistemas",
+"emprendimiento","proyecto_de_grado2",
+"electivaA1","electivaA2","electivaB1","electivaB2"
+];
+
+creditos = [
+1,2,5,3,5,2,1,2,4,5,3,4,2,4,4,3,4,2,3,4,4,2,3,3,2,3,4,3,2,3,
+5,4,4,3,3,2,4,4,3,4,4,3,3,5,3,2,3,4,4,3,3,2,1,3,3,6,3,3,3,3
+];
+
+simultaneo = array2d(1..4,1..2, [
+9,8,
+14,13,
+20,19,
+21,22
+]);
+
+electivas1 = array2d(1..2,1..2, [
+57,0,
+58,0
+]);
+
+electivas2 = array2d(1..2,1..2, [
+59,0,
+60,0
+]);
+
+precedence = array2d(1..49,1..2, [
+1,7, 4,16, 3,10, 3,9, 3,8, 3,11, 6,18, 5,12,
+10,15, 10,14, 10,25, 10,13, 12,17, 12,24,
+16,31, 14,21, 14,20, 14,19, 13,22, 24,35,
+11,35, 15,21, 15,23, 15,34, 15,29, 23,39,
+23,35, 21,39, 20,27, 19,26, 31,42, 17,30,
+17,37, 30,40, 29,36, 27,33, 33,38, 37,41,
+38,47, 39,43, 40,44, 41,48, 47,49,
+45,50, 41,51, 41,52, 48,55, 50,54,
+52,56
+]);

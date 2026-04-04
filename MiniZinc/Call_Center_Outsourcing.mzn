@@ -1,4 +1,4 @@
-int: budget = 10000;
+int: budget;
 
 var 0..500: North;
 var 0..400: UQ;

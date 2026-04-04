@@ -1,0 +1,4 @@
+STOCKS = {ECOPETROL, BANCOLOMBIA, APPLE};
+budget = 10000000;
+expected_return = [12, 9, 11];
+cost = [60000, 52000, 58000];

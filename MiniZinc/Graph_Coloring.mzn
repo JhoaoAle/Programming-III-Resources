@@ -1,4 +1,4 @@
-enum COLOR = {GREEN, YELLOW, BLUE, ORANGE};
+enum COLOR = {'GREEN', 'YELLOW', 'BLUE', 'ORANGE'};
 
 var COLOR: Colombia;
 var COLOR: Venezuela;
