@@ -1,0 +1,8 @@
+age = 34;
+income = 4500000;        % COP mensual
+debt = 900000;           % COP mensual
+credit_score = 710;
+employment_years = 3;
+dependents = 2;
+has_delinquency = 0;
+loan_amount = 12000000;  % COP
