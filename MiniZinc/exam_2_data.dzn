@@ -1,0 +1,20 @@
+num_dias = 7;
+
+ingreso_semanal = 400000;
+
+costo_arriendo = 200000;
+costo_lavanderia = 20000;
+
+costo_comida = [5000, 10000, 25000];
+costo_esparcimiento = [30000, 60000];
+
+satisfaccion_comida = [-5, 4, 15];
+satisfaccion_esparcimiento = [5, 15];
+
+satisfaccion_estudiar = 4;
+
+min_lavanderia = 2;
+min_esparcimiento = 1;
+max_dias_sin_estudiar = 1;
+
+ultimo_dia_arriendo = 2;

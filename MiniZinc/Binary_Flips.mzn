@@ -1,5 +1,5 @@
-int: n = 50;        
-int: m = 10;      
+int: n = 10;        
+int: m = 7;      
 
 array[1..n, 1..m] of var 0..1: x;
 

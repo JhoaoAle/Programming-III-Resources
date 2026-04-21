@@ -1,0 +1,56 @@
+\documentclass{article}
+
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{trees}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{microtype}
+\usepackage[top=1.5cm]{geometry} % controls page margins
+
+\title{Examen Parcial 2}
+\author{Programación III \\ Facultad de Ingenierías - Universidad Tecnológica de Pereira \\ Ingeniería de Sistemas y Computación}
+\date{Abril 21 2026}
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+Un estudiante cuenta con un ingreso semanal fijo de \$400.000, a partir del cual debe planear su rutina y gasto total para un espacio de 7 días.
+
+Considere las siguientes reglas que se deben satsifacer en una semana de estudio:
+
+\begin{itemize}
+  \item Antes del tercer día de la semana debe pagar una parte del arriendo de su apartamento, con un costo de \$200.000. Una vez ha pagado su arriendo, no debe volver a preocuparse por ello.
+  \item Cada día, el estudiante debe elegir una de las siguientes opciones de comida:
+  \begin{itemize}
+    \item Opción económica (\$5.000): Bajo costo, insatisfactoria.
+    \item Opción intermedia(\$10.000): Costo medio, un poco satisfactoria.
+    \item Opción costosa(\$25.000): Costo alto, muy satisfactoria.
+  \end{itemize}
+  Sin embargo, debido a que la opción económica no es para nada saludable, el estudiante no puede elegirla más de 2 veces a la semana, y no puede ser en días contiguos.
+  
+  (\textbf{Opcional(+0.7)} El estudiante es una persona que no se siente satisfecho con la monotonía, por lo tanto no está dispuesto a elegir el mismo tipo de comida tres días seguidos)
+  \item Durante la semana, el estudiante debe lavar su ropa en la lavandería; cada visita tiene un costo fijo de \$ 20.000:
+  \begin{itemize}
+    \item En una semana, debe visitar la lavandería por lo menos dos veces a la semana
+    \item Estas visitas no pueden ocurrir en dos días consecutivos, así como tampoco el mismo día en el que se pagó el arriendo.
+  \end{itemize}
+  \item Para mantenerse al día con sus lecciones, el estudiante debe revisar el material de estudio de sus clases por lo menos una vez cada dos días.
+  \item Para mantenerse en contacto con sus amigos, el estudiante debe dedicar por lo menos uno de los días de su semana a una actividad de esparcimiento; para lo cual tiene dos opciones: 
+  \begin{itemize}
+    \item Una actividad de esparcimiento sencilla (\$30.000) Es algo satisfactoria.
+    \item Una actividad de esparcimiento elaborada (\$60.000) Es muy satisfactoria.
+  \end{itemize}
+\end{itemize}
+
+Debido a que cuenta con tiempo limitado, el estudiante sólo puede realizar una acción al día, además de comer, la cual puede ser:
+\begin{itemize}
+  \item Pagar el arriendo (1 vez).
+  \item Estudiar
+  \item Ir a la lavandería.
+  \item Esparcimiento.
+\end{itemize}
+
+De manera adicional, se espera que el estudiante logre terminar su semana sintiéndose tan satisfecho como sea posible y habiendo ahorrado la mayor cantidad de dinero posible. Considere que el estudiante no puede gastar en la semana una suma de dinero mayor a su ingreso semanal.
+\end{document}

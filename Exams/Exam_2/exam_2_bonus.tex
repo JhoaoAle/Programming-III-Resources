@@ -1,0 +1,169 @@
+% Author: Uwe Zimmermann
+\documentclass{article}
+
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{trees}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{microtype}
+\usepackage{parskip}
+\setlength{\parskip}{0.8em}
+\usepackage[top=1.5cm]{geometry} % controls page margins
+%\usepackage[active,tightpage]{preview}
+%\PreviewEnvironment{center}
+%\setlength\PreviewBorder{10pt}%
+\usepackage{ifthen}
+
+\usetikzlibrary{calc}
+
+\pgfkeys{
+  /sevenseg/.is family, /sevenseg,
+  slant/.estore in      = \sevensegSlant,     % vertical slant in degrees
+  size/.estore in       = \sevensegSize,      % length of a segment
+  shrink/.estore in     = \sevensegShrink,    % avoids overlapping of segments
+  line width/.estore in = \sevensegLinewidth, % thickness of the segments
+  line cap/.estore in   = \sevensegLinecap,   % end cap style rect, round, butt
+  oncolor/.estore in    = \sevensegOncolor,   % color of an ON segment
+  offcolor/.estore in   = \sevensegOffcolor,  % color of an OFF segment
+}
+
+\pgfkeys{
+  /sevenseg,
+  default/.style = {slant = 0, size = 1em, shrink = 0.1, 
+                    line width = 0.15em, line cap = butt, 
+                    oncolor = red, offcolor = gray}
+}
+
+%===============================================
+%                     a b c d e f g - segment values
+% \sevenseg[options]{{1,1,1,1,1,1,0,}}
+%
+\newcommand{\sevenseg}[2][]% options values
+{%
+\pgfkeys{/sevenseg, default, #1}%
+\def\sevensegarray{#2}%
+  \begin{tikzpicture}%
+    % first define the position of the 6 corner points
+    \path (0,0) ++(0,0)                             coordinate (P1);
+    \path (0,0) ++(\sevensegSize,0)                 coordinate (P2);
+    \path (0,0) ++(90-\sevensegSlant:\sevensegSize) coordinate (P3);
+    \path (P2)  ++(90-\sevensegSlant:\sevensegSize) coordinate (P4);
+    \path (P3)  ++(90-\sevensegSlant:\sevensegSize) coordinate (P5);
+    \path (P4)  ++(90-\sevensegSlant:\sevensegSize) coordinate (P6);
+    % then step through the 1/0 values in the segment array
+    \foreach \i in {0,...,6}%
+    {
+      \pgfmathparse{\sevensegarray[\i]}
+      \ifthenelse{\equal{\pgfmathresult}{1}}%
+        {\let\mycolor=\sevensegOncolor}%  segment is on
+        {\let\mycolor=\sevensegOffcolor}% segment is off
+      \tikzstyle{segstyle} = [draw=\mycolor, line width = \sevensegLinewidth,
+                              line cap = \sevensegLinecap]
+      %-----------------------
+      \ifthenelse{\equal{\i}{0}}{\path[segstyle] 
+        (${1-\sevensegShrink}*(P5)+\sevensegShrink*(P6)$) 
+        -- ($\sevensegShrink*(P5)+{1-\sevensegShrink}*(P6)$);}{} % a
+      \ifthenelse{\equal{\i}{1}}{\path[segstyle] 
+        (${1-\sevensegShrink}*(P6)+\sevensegShrink*(P4)$) 
+        -- ($\sevensegShrink*(P6)+{1-\sevensegShrink}*(P4)$);}{} % b
+      \ifthenelse{\equal{\i}{2}}{\path[segstyle] 
+        (${1-\sevensegShrink}*(P4)+\sevensegShrink*(P2)$) 
+        -- ($\sevensegShrink*(P4)+{1-\sevensegShrink}*(P2)$);}{} % c
+      \ifthenelse{\equal{\i}{3}}{\path[segstyle] 
+        (${1-\sevensegShrink}*(P1)+\sevensegShrink*(P2)$) 
+        -- ($\sevensegShrink*(P1)+{1-\sevensegShrink}*(P2)$);}{} % d
+      \ifthenelse{\equal{\i}{4}}{\path[segstyle] 
+        (${1-\sevensegShrink}*(P1)+\sevensegShrink*(P3)$) 
+        -- ($\sevensegShrink*(P1)+{1-\sevensegShrink}*(P3)$);}{} % e
+      \ifthenelse{\equal{\i}{5}}{\path[segstyle] 
+        (${1-\sevensegShrink}*(P3)+\sevensegShrink*(P5)$) 
+        -- ($\sevensegShrink*(P3)+{1-\sevensegShrink}*(P5)$);}{} % f
+      \ifthenelse{\equal{\i}{6}}{\path[segstyle] 
+        (${1-\sevensegShrink}*(P3)+\sevensegShrink*(P4)$) 
+        -- ($\sevensegShrink*(P3)+{1-\sevensegShrink}*(P4)$);}{} % g
+    }
+  \end{tikzpicture}%
+}
+
+\newcommand{\sevensegnum}[2][]% sample characvters
+{%                                          
+  \ifthenelse{\equal{#2}{0}}{\sevenseg[#1]{{1,1,1,1,1,1,0,}}}{%
+  \ifthenelse{\equal{#2}{1}}{\sevenseg[#1]{{0,1,1,0,0,0,0,}}}{%
+  \ifthenelse{\equal{#2}{2}}{\sevenseg[#1]{{1,1,0,1,1,0,1,}}}{%
+  \ifthenelse{\equal{#2}{3}}{\sevenseg[#1]{{1,1,1,1,0,0,1,}}}{%
+  \ifthenelse{\equal{#2}{4}}{\sevenseg[#1]{{0,1,1,0,0,1,1,}}}{%
+  \ifthenelse{\equal{#2}{5}}{\sevenseg[#1]{{1,0,1,1,0,1,1,}}}{%
+  \ifthenelse{\equal{#2}{6}}{\sevenseg[#1]{{1,0,1,1,1,1,1,}}}{%
+  \ifthenelse{\equal{#2}{7}}{\sevenseg[#1]{{1,1,1,0,0,0,0,}}}{%
+  \ifthenelse{\equal{#2}{8}}{\sevenseg[#1]{{1,1,1,1,1,1,1,}}}{%
+  \ifthenelse{\equal{#2}{9}}{\sevenseg[#1]{{1,1,1,1,0,1,1,}}}{%
+  \ifthenelse{\equal{#2}{A}}{\sevenseg[#1]{{1,1,1,0,1,1,1,}}}{%
+  \ifthenelse{\equal{#2}{B}}{\sevenseg[#1]{{0,0,1,1,1,1,1,}}}{%
+  \ifthenelse{\equal{#2}{C}}{\sevenseg[#1]{{0,0,0,1,1,0,1,}}}{%
+  \ifthenelse{\equal{#2}{D}}{\sevenseg[#1]{{0,1,1,1,1,0,1,}}}{%
+  \ifthenelse{\equal{#2}{E}}{\sevenseg[#1]{{1,0,0,1,1,1,1,}}}{%
+  \ifthenelse{\equal{#2}{F}}{\sevenseg[#1]{{1,0,0,0,1,1,1,}}}{%
+  {\sevenseg[#1]{{0,0,0,0,0,0,0,}}}}}}}}}}}}}}}}}}}%
+}
+
+
+\title{Bonificación Examen Parcial 2}
+\author{Programación III \\ Facultad de Ingenierías - Universidad Tecnológica de Pereira \\ Ingeniería de Sistemas y Computación}
+\date{Abril 21 2026}
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+Considere una pantalla de siete segmentos: 
+\bigskip
+
+\begin{center}
+    \sevenseg[size = 2em, line cap = butt]{{0,0,0,0,0,0,0}}
+\end{center}
+
+Por medio de la cual es posible crear símbolos para cada uno de los números del 0 al 9:
+\begin{center}
+    \foreach \n in {0,1,2,3,4,5,6,7,8,9}{\sevensegnum[offcolor=white]{\n} }
+\end{center}
+
+Sin embargo, hay casos en los cuales es difícil distinguir un número de otro, como en el caso del 5 y el 6, o el 1 con respecto al 7, o al 8 con respecto al 0, 6 y 9:
+
+
+\begin{center}
+\foreach \n in {5,6}{\sevensegnum[offcolor=white]{\n}\,}
+\qquad
+\foreach \n in {1,7}{\sevensegnum[offcolor=white]{\n}\,}
+\qquad
+\sevensegnum[offcolor=white]{8}\,
+\sevensegnum[offcolor=white]{0}\,
+\sevensegnum[offcolor=white]{6}\,
+\sevensegnum[offcolor=white]{9}
+\end{center}
+
+En general, se ha logrado identificar que esta complicación ocurre cuando uno de los símbolos solo se diferencia de otro en, como máximo, un segmento. 
+
+Por lo tanto, se ha considerado la idea de definir un nuevo estándar de símbolos que evite a un usuario confundir un símbolo con otro. Se ha llegado a la conclusión de que un símbolo está claramente diferenciado de otro si tienen por lo menos dos segmentos de diferencia entre si.
+
+Teniendo esto en mente, se desea construir un conjunto de 10 símbolos distintos, cumpliendo con los siguientes requerimientos:
+
+\begin{itemize}
+    \item \textbf{Claridad:} Cada par de símbolos debe diferir en \textbf{al menos} 2 segmentos.
+    \item \textbf{Legibilidad:} Cada símbolo debe incluir \textbf{al menos} 4 y \textbf{como máximo} 5 segmentos encendidos.
+\end{itemize}
+
+Para diseñar su solución, considere lo siguiente:
+
+\begin{itemize}
+    \item Hay 10 símbolos en total
+    \item Cada símbolo está determinado por el estado de cada uno de los siete segmentos.
+    \item Para que un símbolo sea considerado válido, \textbf{NO} es necesario que su apariencia sea intuitiva.
+\end{itemize}
+
+
+\vspace{1em} Proponga un modelo de programación por restricciones que permita encontrar una asignación válida para todos los símbolos.
+
+\end{document}
+
+
