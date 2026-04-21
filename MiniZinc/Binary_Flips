@@ -1,0 +1,17 @@
+int: n = 10;        % number of strings
+int: m = 7;         % length of each string
+
+array[1..n, 1..m] of var 0..1: x;
+
+% Constraint: any two different strings must differ in at least 2 positions
+constraint
+  forall(i, j in 1..n where i < j) (
+    sum(k in 1..m)(bool2int(x[i,k] != x[j,k])) >= 2
+  );
+
+solve satisfy;
+
+output [
+  concat([ show(x[i,k]) | k in 1..m ]) ++ "\n"
+  | i in 1..n
+];
