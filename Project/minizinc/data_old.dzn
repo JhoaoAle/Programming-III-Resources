@@ -1,5 +1,4 @@
 num_subjects = 60;
-num_semestre = 10;
 num_precedences = 49;
 num_simultaneo = 4;
 num_electivas1 = 2;
