@@ -17,10 +17,45 @@
 \maketitle
 \thispagestyle{empty}
 
+\section{Objetivo}
+
+Para este proyecto se requiere elaborar un modelo de la malla curricular para el programa de Ingeniería de Sistemas y Computación de la Universidad Tecnológica de Pereira que permita obtener un plan de estudios adaptado a las condiciones requeridas por el usuario.
+
 \section{Requerimientos}
 
-Para este proyecto se requiere elaborar un modelo de la malla curricular para el programa de Ingeniería de Sistemas y Computación de la Universidad X que permita obtener un plan de estudios adaptado a las condiciones requeridas por el usuario.
+\subsection{Parte I. Modelamiento mediante restricciones}
+Modelar el plan de estudios del programa de Ingeniería de Sistemas y Computación teniendo en cuenta el dominio de las variables de decisión y las restricciones asociadas al mismo:
+
 \begin{itemize}
-    \item 
+    \item Conjunto total de asignaturas.
+    \item Número de créditos asociado a cada asignatura.
+    \item Relaciones de prerrequisito entre asignaturas.
+    \item Relaciones de correquisito entre asignaturas.
+    \item Restricciones relacionadas con la carga académica por semestre.
 \end{itemize}
+
+
+A partir de este modelo, obtener una solución global que construya un plan de matrícula por semestre, cumpliendo todas las restricciones establecidas y permitiendo que un estudiante complete el programa académico en un máximo de 12 semestres.
+
+Debe analizar los resultados obtenidos y reportar hallazgos y conclusiones.
+
+\subsection{Parte II. Agentes}
+
+Teniendo en cuenta el modelo anteriormente definido, debe implementar un sistema de toma de decisiones basado en agentes. Dos ejemplos de implementación de agentes, según lo discutido en clase son:
+
+\begin{enumerate}
+    \item \textbf{Agente "Alumno esforzado":} Selecciona las asignaturas disponibles con mayor número de créditos asociados en orden descendente, respetando las restricciones académicas.
+    \item \textbf{Agente "Alumno ocupado":} Selecciona asignaturas hasta completar un máximo de 15 créditos por semestre, sin priorizar el número de créditos de cada asignatura.
+\end{enumerate}
+
+Adicionalmente, se debe implementar un agente o una sociedad de agentes propia que permita hallar una solución válida para el problema modelado.
+
+\textbf{Requerimiento de Sociedad de agentes:}  Debe incluir mecanismos de interacción, cooperación o competencia entre 2 o más agentes para construir conjuntamente una propuesta válida de plan académico. \newline
+
+
+El proyecto puede desarrollarse en cualquier lenguaje de programación. Se recomienda el uso de MiniZinc integrado con Python o SWI-Prolog.
+
+\section{Entregables}
+Se debe presentar una sustentación del proyecto, así como el código fuente creado para la resolución de los requerimientos definidos.
 \end{document}
+
