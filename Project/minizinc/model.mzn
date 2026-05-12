@@ -14,6 +14,10 @@ int: current_semester;
 array[SUBJECTS] of bool: completed;
 array[SUBJECTS] of var bool: taking;
 
+% Minimum credits floor — passed in by the solver so it can
+% relax the constraint when fewer credits remain available.
+int: min_credits;
+
 % ============================================
 % RULE DATA
 % ============================================
@@ -23,8 +27,6 @@ array[1..num_precedences, 1..2] of int: precedence;
 
 int: num_simultaneo;
 array[1..num_simultaneo, 1..2] of int: simultaneo;
-
-% FIX: electives must be declared if they exist in .dzn
 
 int: num_electivas1;
 array[1..num_electivas1, 1..2] of int: electivas1;
@@ -78,22 +80,23 @@ constraint forall(i in 1..num_electivas2)(
     not taking[electivas2[i,1]]
 );
 
-
+% ============================================
+% CREDIT BOUNDS
+% ============================================
 
 var int: total_credits =
     sum(s in SUBJECTS)(
         creditos[s] * bool2int(taking[s])
     );
 
-constraint total_credits >= 12;
+constraint total_credits >= min_credits;
 constraint total_credits <= 20;
 
-
 % ============================================
-% SOLVE
+% OBJECTIVE: maximise credits taken (greedy progress)
 % ============================================
 
-solve satisfy;
+solve maximize total_credits;
 
 % ============================================
 % OUTPUT
