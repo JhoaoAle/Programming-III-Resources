@@ -15,6 +15,7 @@ constraint           1000 * S + 100 * E + 10 * N + D
 
 constraint alldifferent([S,E,N,D,M,O,R,Y]);
 
+
 solve satisfy;
 
 output ["   \(S)\(E)\(N)\(D)\n",
